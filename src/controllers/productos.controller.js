@@ -1,8 +1,12 @@
 const Producto = require("../Models/Producto");
 
 exports.getProducts = async (req, res) => {
-  const Productos = await Producto.find();
-  res.json(Productos);
+  try {
+    const Productos = await Producto.find();
+    res.json(Productos);
+  } catch (error) {
+    console.log("Error : " + error);
+  }
 };
 exports.getProductsCategory = async (req, res) => {
   const category = req.params.category;
