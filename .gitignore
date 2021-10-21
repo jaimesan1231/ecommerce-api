@@ -1,0 +1,7 @@
+#dependencies
+/node_modules
+
+#variables entorno
+.env
+
+.vercel
