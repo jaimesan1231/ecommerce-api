@@ -10,6 +10,7 @@ const { createRoles } = require("./libs/initialSetup");
 
 const routerProductos = require("./routes/productos.routes");
 const routerAuth = require("./routes/auth.routes");
+const fileUpload = require("express-fileupload");
 
 //DB Connection
 dbConnection();
@@ -23,6 +24,11 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 app.use(cors());
+app.use(
+  fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+  })
+);
 
 // SDK de Mercado Pago
 const mercadopago = require("mercadopago");

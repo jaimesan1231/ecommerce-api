@@ -13,6 +13,10 @@ const ProductoSchema = new Schema({
     type: String,
     required: true,
   },
+  url: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = model("Producto", ProductoSchema);
