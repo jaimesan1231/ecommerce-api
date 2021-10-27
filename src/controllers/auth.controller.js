@@ -44,5 +44,5 @@ exports.singIn = async (req, res) => {
     expiresIn: 86400,
   });
   console.log(userFound);
-  res.json({ token });
+  res.json({ token, userFound });
 };
