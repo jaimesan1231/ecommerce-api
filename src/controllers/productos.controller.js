@@ -26,6 +26,7 @@ exports.getProductsCategory = async (req, res) => {
   const category = req.params.category;
   const Productos = await Producto.find({ category: category });
   res.json(Productos);
+  res.connection.destroy();
 };
 exports.getProductsHigherLess = async (req, res) => {
   const category = req.params.category;
